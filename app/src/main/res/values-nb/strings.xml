@@ -3,5 +3,10 @@
     <string name="app_name">AndroidAssignments</string>
     <string name="hello_message">Hallo, verden!</string>
     <string name="ButtonText">Jeg er en knapp!</string>
+    <string name="login">logg inn</string>
+    <string name="login_name">Påloggingsnavn</string>
+    <string name="password">passord</string>
+
+
 
 </resources>
