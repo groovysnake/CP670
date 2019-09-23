@@ -6,6 +6,18 @@
     <string name="login">logg inn</string>
     <string name="login_name">Påloggingsnavn</string>
     <string name="password">passord</string>
+    <string name="login_button">Logg inn</string>
+    <string name="dialog_message">Vil du være ferdig?</string>
+    <string name="dialog_title">Er du sikker?</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Avbryt</string>
+    <string name="switch_on">Bryter PÅ</string>
+    <string name="switch_off">Bryter AV</string>
+    <string name="response">Her er mitt svar</string>
+    <string name="what_does">Hva gjør dette?</string>
+    <string name="check_box">Avkrysning</string>
+    <string name="radio_button">Radio Knapp</string>
+
 
 
 
