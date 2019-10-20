@@ -17,6 +17,11 @@
     <string name="what_does">Hva gjør dette?</string>
     <string name="check_box">Avkrysning</string>
     <string name="radio_button">Radio Knapp</string>
+    <string name="chat_button">Begynne å prate</string>
+    <string name="send_message_button">Send</string>
+    <string name="send_message_hint">Tast inn din melding her</string>
+
+
 
 
 

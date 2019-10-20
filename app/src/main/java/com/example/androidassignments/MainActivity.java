@@ -10,11 +10,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+// StartActivity from assignments
 public class MainActivity extends Activity {
 
     protected static final String ACTIVITY_NAME = "MainActivity";
 
     Button mainButton;
+    Button startChatButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -22,6 +25,8 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         Log.i(ACTIVITY_NAME, "In onCreate()");
         mainButton = findViewById(R.id.button);
+        startChatButton = findViewById(R.id.start_chat_button);
+
         mainButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
@@ -29,6 +34,21 @@ public class MainActivity extends Activity {
                 startActivityForResult(intent, 10);
             }
         });
+
+
+        startChatButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Code here executes on main thread after user presses button
+
+                Intent intent = new Intent(MainActivity.this, ChatWindow.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    void onStartButtonClick()
+    {
+        Log.i(ACTIVITY_NAME, "User clicked Start Chat");
     }
     @Override
     protected void onResume()

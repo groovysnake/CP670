@@ -16,11 +16,9 @@
     <string name="what_does">What does this do?</string>
     <string name="check_box">Check Box</string>
     <string name="radio_button">Radio Button</string>
-
-
-
-
-
+    <string name="chat_button">Start Chat</string>
+    <string name="send_message_button">Send</string>
+    <string name="send_message_hint">Type your message here</string>
 
 
 

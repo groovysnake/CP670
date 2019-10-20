@@ -1,7 +1,5 @@
 package com.example.androidassignments;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,6 +9,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.snackbar.Snackbar;
+
 
 public class LoginActivity extends AppCompatActivity
 {
@@ -37,6 +40,8 @@ public class LoginActivity extends AppCompatActivity
         loginButton = findViewById(R.id.loginButton);
         emailView = findViewById(R.id.emailText);
 
+        //Print("Hello there");
+
         loginButton.setOnClickListener(new View.OnClickListener()
                                        {
                                            public void onClick(View v)
@@ -45,7 +50,8 @@ public class LoginActivity extends AppCompatActivity
                                                enteredEmail = emailView.getText().toString();
                                                //Log.i(ACTIVITY_NAME, enteredEmail);
                                                editor.putString("DefaultEmail", enteredEmail);
-                                               editor.commit();
+                                               //Print(enteredEmail);
+                                               editor.apply(); // commit(). apply() handles this in the background, commit writes immediately
                                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                                startActivity(intent);
                                            }
@@ -55,6 +61,14 @@ public class LoginActivity extends AppCompatActivity
 
         Log.i(ACTIVITY_NAME, "In onCreate()");
 
+    }
+
+    // Print a snack bar
+    void Print(String message)
+    {
+        Snackbar snackbar;
+        snackbar = Snackbar.make(findViewById(R.id.content), message, Snackbar.LENGTH_INDEFINITE);
+        snackbar.show();
     }
 
     @Override
