@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/action_one"
+        android:title="@string/one"
+        android:icon="@drawable/icons8_year_of_dog_48"
+        android:orderInCategory="101"
+        app:showAsAction="always" />
+    <item android:id="@+id/action_two"
+        android:title="@string/two"
+        android:icon="@drawable/icons8_year_of_horse_48"
+        android:orderInCategory="101"
+        app:showAsAction="always" />
+    <item android:id="@+id/action_three"
+        android:title="@string/three"
+        android:icon="@drawable/icons8_year_of_tiger_48"
+        android:orderInCategory="101"
+        app:showAsAction="always" />
+    <item android:id="@+id/about"
+        android:title="@string/about_word"
+        android:orderInCategory="101"
+        app:showAsAction="never" />
+</menu>

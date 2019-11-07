@@ -20,9 +20,16 @@
     <string name="chat_button">Begynne å prate</string>
     <string name="send_message_button">Send</string>
     <string name="send_message_hint">Tast inn din melding her</string>
-
-
-
+    <string name="title_activity_test_toolbar">ToolbarTeste</string>
+    <string name="toolbar_button">Toolbar</string>
+    <string name="about">Versjon 1.0, av Marco Valdez</string>
+    <string name="item1_select">Du har valgt element 1</string>
+    <string name="toolbar_dialog_option_2">Vil du tilbakke?</string>
+    <string name="set_message_message">Ny melding å si</string>
+    <string name="one">En</string>
+    <string name="two">To</string>
+    <string name="three">Tre</string>
+    <string name="about_word">Om</string>
 
 
 

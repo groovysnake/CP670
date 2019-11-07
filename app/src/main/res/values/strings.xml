@@ -19,6 +19,19 @@
     <string name="chat_button">Start Chat</string>
     <string name="send_message_button">Send</string>
     <string name="send_message_hint">Type your message here</string>
+    <string name="title_activity_test_toolbar">TestToolbar</string>
+    <string name="toolbar_button">Toolbar</string>
+    <string name="about">Version 1.0, by Marco Valdez</string>
+    <string name="item1_select">You selected item 1</string>
+    <string name="toolbar_dialog_option_2">Do you want to go back?</string>
+    <string name="set_message_message">New message to display</string>
+    <string name="one">One</string>
+    <string name="two">Two</string>
+    <string name="three">Three</string>
+    <string name="about_word">About</string>
+
+
+
 
 
 
