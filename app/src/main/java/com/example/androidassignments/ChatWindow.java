@@ -2,7 +2,15 @@ package com.example.androidassignments;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.CharArrayBuffer;
+import android.database.ContentObserver;
+import android.database.Cursor;
+import android.database.DataSetObserver;
+import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -22,6 +30,11 @@ public class ChatWindow extends AppCompatActivity
 
     protected static final String ACTIVITY_NAME = "ChatWindow";
 
+    SQLiteDatabase database;
+    ChatDatabaseHelper tempDatabase;
+    private String[] allItems = { ChatDatabaseHelper.COLUMN_ID,
+            ChatDatabaseHelper.COLUMN_ITEM };
+
     Button sendButton;
     EditText messageEditText;
     ListView listView;
@@ -34,6 +47,48 @@ public class ChatWindow extends AppCompatActivity
     {
         Log.i("ChatWindow.java", "in OnCreate() of chat window");
         super.onCreate(savedInstanceState);
+
+        tempDatabase = new ChatDatabaseHelper(this);
+        database = tempDatabase.getWritableDatabase();
+
+        //ContentValues cValues = new ContentValues();
+        //cValues.put(ChatDatabaseHelper.COLUMN_ITEM, "I am Good! :)");
+//
+        //database.insert(ChatDatabaseHelper.TABLE_ITEMS, "NullPlaceholder", cValues);
+
+        Cursor cursor = database.query(ChatDatabaseHelper.TABLE_ITEMS,
+                 allItems,
+                ChatDatabaseHelper.COLUMN_ITEM + " not null",
+                null,
+                null,
+                null,
+                null
+                );
+        cursor.moveToFirst();
+
+        // Read database and add to messages
+        while(!cursor.isAfterLast())
+        {
+            Log.i(ACTIVITY_NAME, "New message found in Database. Details below --");
+            Log.i(ACTIVITY_NAME, "SQL column " + cursor.getColumnName(0) + ": " + cursor.getLong(cursor.getColumnIndex(ChatDatabaseHelper.COLUMN_ID)));
+
+
+            //Log.i(ACTIVITY_NAME, "SQL COLUMN NAME: " + cursor.getColumnName(1));
+            String temp = cursor.getString(cursor.getColumnIndex(ChatDatabaseHelper.COLUMN_ITEM));
+            Log.i(ACTIVITY_NAME, "SQL column " + cursor.getColumnName(1) + ": " + temp);
+            messages.add(temp);
+
+            Log.i(ACTIVITY_NAME, "Cursor’s  column count =" + cursor.getColumnCount());
+            cursor.moveToNext();
+        }
+        cursor.close();
+
+
+        //for (int i = 0; i < cursor.getColumnCount(); i++)
+        //{
+        //    cursor.getColumnName(i);
+        //}
+
         setContentView(R.layout.activity_chat_window);
         sendButton = findViewById(R.id.send_button);
         messageEditText = findViewById(R.id.message_text_edit);
@@ -54,6 +109,12 @@ public class ChatWindow extends AppCompatActivity
                 //Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 //startActivity(intent);
                 messageAdapter.notifyDataSetChanged(); //this restarts the process of getCount()/getView()
+
+                // Add to database
+                ContentValues cValues = new ContentValues();
+                cValues.put(ChatDatabaseHelper.COLUMN_ITEM, temp);
+
+                database.insert(ChatDatabaseHelper.TABLE_ITEMS, "NullPlaceholder", cValues);
             }
         });
 
@@ -83,7 +144,7 @@ public class ChatWindow extends AppCompatActivity
             LayoutInflater inflater = ChatWindow.this.getLayoutInflater();
             View result;
 
-            Log.i(ACTIVITY_NAME, Integer.toString(position));
+            //Log.i(ACTIVITY_NAME, Integer.toString(position));
             if(position%2 == 0)
                 result = inflater.inflate(R.layout.chat_row_incoming, null);
             else
