@@ -30,6 +30,11 @@
     <string name="two">To</string>
     <string name="three">Tre</string>
     <string name="about_word">Om</string>
+    <string name="weather_button">Været</string>
+    <string name="min_temp">Min Temp: </string>
+    <string name="cur_temp">Nå:  </string>
+    <string name="max_temp">Max Temp: </string>
+
 
 
 

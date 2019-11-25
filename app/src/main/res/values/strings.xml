@@ -29,6 +29,10 @@
     <string name="two">Two</string>
     <string name="three">Three</string>
     <string name="about_word">About</string>
+    <string name="weather_button">Weather</string>
+    <string name="min_temp">Min Temp: </string>
+    <string name="cur_temp">Current Temp: </string>
+    <string name="max_temp">Max Temp: </string>
 
 
 

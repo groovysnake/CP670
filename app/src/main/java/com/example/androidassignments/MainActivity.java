@@ -18,6 +18,7 @@ public class MainActivity extends Activity {
     Button mainButton;
     Button startChatButton;
     Button testToolbarButton;
+    Button weatherButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -28,6 +29,7 @@ public class MainActivity extends Activity {
         mainButton = findViewById(R.id.button);
         startChatButton = findViewById(R.id.start_chat_button);
         testToolbarButton = findViewById(R.id.toolbar_button);
+        weatherButton = findViewById(R.id.weather_button);
 
         mainButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -52,6 +54,15 @@ public class MainActivity extends Activity {
                 // Code here executes on main thread after user presses button
 
                 Intent intent = new Intent(MainActivity.this, TestToolbar.class);
+                startActivity(intent);
+            }
+        });
+
+        weatherButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Code here executes on main thread after user presses button
+
+                Intent intent = new Intent(MainActivity.this, WeatherForecast.class);
                 startActivity(intent);
             }
         });
