@@ -34,6 +34,9 @@
     <string name="min_temp">Min Temp: </string>
     <string name="cur_temp">Nå:  </string>
     <string name="max_temp">Max Temp: </string>
+    <string name="message_text">Meldingens Innhold</string>
+    <string name="message_id">Meldingens ID</string>
+    <string name="message_delete">Fjern Melding</string>
 
 
 

@@ -33,8 +33,9 @@
     <string name="min_temp">Min Temp: </string>
     <string name="cur_temp">Current Temp: </string>
     <string name="max_temp">Max Temp: </string>
-
-
+    <string name="message_text">Message text </string>
+    <string name="message_id">Message ID </string>
+    <string name="message_delete">Delete Message</string>
 
 
 
